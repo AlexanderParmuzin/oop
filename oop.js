@@ -167,7 +167,7 @@ class Beverage extends Meal {
 // ----- Order
 
 class Order {
-  isPayed = 'false'
+  isPayed = false
   constructor(...chosen) {
     this.chosen = chosen
   }
@@ -193,7 +193,7 @@ class Order {
   }
 
   addMeal(dish) {
-    if (this.isPayed === 'true') {
+    if (this.isPayed == true) {
       return console.log(
         `Cannot add ${dish.name}, the order is closed. Please create a new order.`
       )
@@ -203,7 +203,7 @@ class Order {
   }
 
   removeMeal(dish) {
-    if (this.isPayed === 'true') {
+    if (this.isPayed == true) {
       return console.log(
         `Cannot remove ${dish.name}, the order is closed. Please create a new order.`
       )
@@ -221,11 +221,11 @@ class Order {
   }
 
   pay() {
-    if (this.isPayed === 'true') {
+    if (this.isPayed == true) {
       return console.log('The order is closed. Please create a new order.')
     }
     console.log('The payment was succesful.')
-    this.isPayed = 'true'
+    this.isPayed = true
   }
 }
 
